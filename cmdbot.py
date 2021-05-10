@@ -5,8 +5,9 @@ import pyfiglet
 y="All Executabe programs are listed below\n\t---------Basic Command---------\n\n$time \n$date\n\n\t---------Apps---------\n\n$Notepad\n$Google Chrome\n$VLC\n$Telegram\n$Virtual Box\n$Discord\n$Window Media Player\n$Visual Studio Codes\n$File Explorer\n$Camera\n\n\t---------System---------\n\n$Open Terminal\n$Open Control Panel\n$PC Information\n$Windows Information\n\n\t---------Settings---------\n\n#Action Center\n#Troubleshooting\n#Event Viewer\n#Computer Management\n#Uninstall Programs\n#Internet Properties\n#IP Address\n#System Report\n#Control Monitor\n#Task Manager\n\n\t----------Other Features----------\n\n-- Browse Any Website by giving the url name\n-- Send Message through Whatsapp by giving the number to whome u want to send Message"
 
 #heading
-titleheading = pyfiglet.figlet_format("<>--Abhishek--<> ", font = "epic")
+titleheading = pyfiglet.figlet_format("\n\t--Abhishek's Assistant-- ", font = "epic")
 print(titleheading)
+print("\n\t>>> : An OS Based program into Menu Driven using Python : <<<")
 s2 = pyfiglet.figlet_format("                       WELCOME TO ASSISTANT", font = "digital" ) 
 print(s2)
 
@@ -18,6 +19,7 @@ engine.setProperty('rate', 150)
 engine.setProperty('volume', 0.9)
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
+engine.say("welcome to my tool, which is an OS Based program into Menu Driven using Python")
 engine.say( " hello {} I'm your Assistant!!! How can i help you ?".format(name) )
 engine.runAndWait()  
 
@@ -57,7 +59,7 @@ while True:
 
     elif (("run" in p) or ("open" in p) or ("execute" in p) or ("show" in p)) and (("virtualbox" in p) or ("oracle" in p) or ("vm" in p)) :
             pyttsx3.speak("Please Wait your virtual box is opening")
-            os.system("virtualbox")
+            os.system("virtual box")
 
     elif (("run" in p) or ("open" in p) or ("execute" in p) or ("show" in p)) and (("discord" in p) or ("Discord" in p)) :
             pyttsx3.speak("Please Wait your discord is opening")
@@ -152,8 +154,19 @@ while True:
 
 #thanku
     elif (("thank you" in p) or ("thanku" in p) or ("thank u" in p) or ("thanks" in p)) :
-            print("Always Welcome ")
-            pyttsx3.speak("Always Welcome ")
+            print("Always Welcome !!!  It's My Job...")
+            pyttsx3.speak("Always Welcome !!!  It's My Job... ")
+            print("Want something else from me to do ?\n\t + Tell Me[y/n]:-  ",end='')
+            pyttsx3.speak("want something else from me to do.")
+
+            inp=input()
+            if inp=="Y" or inp=="y" :
+                    continue
+            elif inp=="N" or inp=="n" :
+                    break
+            else :
+                    pyttsx3.speak("Okay, i'm assuming you want me to do more.")
+                    print("\n\t\t > Okay, i'm assuming you want me to do more.")
 
 #helpcmd
     elif (("help" in p) or ("HELP" in p)) :
@@ -161,9 +174,10 @@ while True:
 
 #Stop or exit of Cmd bot
     elif (("exit" in p) or ("stop" in p) or ("quit" in p) or ("close" in p) or ("terminate" in p) or ("cancel" in p)) :
-            pyttsx3.speak("Thanks For Using Assistant")
             break
     else :
             pyttsx3.speak("Sorry Not Available")
             print("Doesn't Support !!! Try Something Else or Type Help")
 	
+print("\t\t\n  Thank You :)")
+pyttsx3.speak("Thank you for using it !!!  Have a good day...")
